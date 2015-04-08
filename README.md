@@ -1,6 +1,6 @@
 # Seznam Statistika
 
-> CLI app for search freqyency
+> CLI app for [seznam.cz](http://search.seznam.cz/) search statistics
 
 ## Installation
 
@@ -11,3 +11,7 @@
 
 	seznamStatistika praha
 	seznamStatistika "online zdarma"
+
+## Showcase
+
+![Screenshot](screenshot.png)
