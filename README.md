@@ -1,13 +1,24 @@
 # Seznam Statistika
 
-> CLI app for search freqyency
+> CLI app for [seznam.cz](http://search.seznam.cz/) search statistics
+
+![Screenshot](screenshot.png)
+
+## Dependencies
+
+- [Node.js](http://nodejs.org) `v6.10.3`
+- [Yarn](https://yarnpkg.com) `0.27.5`
 
 ## Installation
 
-- Install [Node.js](http://nodejs.org/)
-- `npm install -g https://github.com/pavelbinar/seznamStatistika/archive/1.0.0.tar.gz`
+    git clone git@github.com:pavelbinar/seznamStatistika.git
+    cd seznamStatistika
+    yarn
 
-## Usage
+## Run App
 
-	seznamStatistika praha
-	seznamStatistika "online zdarma"
+	npm start -- “<search term>”
+
+### Example
+
+	npm start -- “praha”

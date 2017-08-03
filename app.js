@@ -1,32 +1,34 @@
 #!/usr/bin/env node
 
-var request = require('request'),
-    cheerio = require('cheerio'),
-    chalk = require('chalk');
+import request from 'request'
+import cheerio from 'cheerio'
+import chalk from 'chalk'
+import _ from 'lodash'
 
-var getData = function (searchText) {
-    var url = 'http://search.seznam.cz/stats?q=' + searchText.split(' ').join('+');
+const displayData = function (searchResults) {
+  _.forEach(searchResults[0], function (result) {
+    console.log(`"${chalk.bold(result.name)}" - ${chalk.green(result.exactMatchCount)}`)
+  })
+}
+const getData = function (keyword) {
+  const url = `https://search.seznam.cz/stats/?term=${keyword.split(' ').join('+')}`
 
-    request(url, function (error, response, html) {
-        if (!error && response.statusCode == 200) {
-            var $ = cheerio.load(html);
+  request(url, function (error, response, html) {
+    if (!error && response.statusCode === 200) {
+      const $ = cheerio.load(html)
 
-            console.log(chalk.green('\nNejhledanější dotazy obsahující "' + searchText + '"\n'));
+      const scriptTagContent = $('script').last().get()[0].children[0].data
+      const regex = /var termQueryData(.*);/g
 
-            $('.statsTop > table').find('tr').each(function (i) {
-                if (i > 0) {
-                    var keyword = $(this).find('.left');
-                    var broadKeywordMatch = keyword.next();
+      const termQueryDataString = scriptTagContent.match(regex)[0]
 
-                    console.log(i + '. "' + chalk.bold(keyword.text()) + '" - ' + chalk.green(broadKeywordMatch.text()));
-                }
-            });
+      const termQueryDataObject = eval(`(function(){${termQueryDataString} return termQueryData;})()`)
 
+      displayData(termQueryDataObject)
+    } else {
+      console.log(error)
+    }
+  })
+}
 
-        } else {
-            console.log(error);
-        }
-    });
-};
-
-getData(process.argv[2]);
+getData(process.argv[2])
