@@ -1,19 +1,19 @@
 {
-  "name": "search-stats",
-  "version": "1.1.0",
+  "name": "seznam-statistika",
+  "version": "1.1.1",
   "description": "",
   "main": "app.js",
   "bin": {
     "seznamStatistika": "app.js"
   },
   "dependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-preset-env": "^1.6.0",
-    "chalk": "^2.0.1",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "chalk": "^2.4.2",
     "cheerio": "^1.0.0-rc.2",
-    "lodash": "^4.17.4",
-    "request": "^2.81.0",
-    "standard": "*"
+    "lodash": "^4.17.15",
+    "request": "^2.88.0",
+    "standard": "^14.3.0"
   },
   "devDependencies": {},
   "scripts": {
@@ -21,6 +21,6 @@
     "lint": "standard",
     "lint:fix": "standard --fix"
   },
-  "author": "Pavel Binar <pavel@remoteorigin.co> (http://remoteorigin.co)",
+  "author": "Pavel Binar <pavel@remoteorigin.co> (https://remoteorigin.com)",
   "license": ""
 }
