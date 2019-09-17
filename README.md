@@ -1,4 +1,4 @@
-# Seznam Statistika
+# Seznam Statistika `1.1.1`
 
 > CLI app for [seznam.cz](http://search.seznam.cz/) search statistics
 
