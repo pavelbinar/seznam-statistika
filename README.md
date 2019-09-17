@@ -6,19 +6,18 @@
 
 ## Dependencies
 
-- [Node.js](http://nodejs.org) `v6.10.3`
-- [Yarn](https://yarnpkg.com) `0.27.5`
+* [Node.js](http://nodejs.org) `v10.16.1`
 
 ## Installation
 
-    git clone git@github.com:pavelbinar/seznamStatistika.git
-    cd seznamStatistika
-    yarn
+    git clone git@github.com:pavelbinar/seznam-statistika.git
+    cd seznam-statistika
+    npm install
 
 ## Run App
 
-	npm start -- “<search term>”
+    npm start -- "<search term>"
 
 ### Example
 
-	npm start -- “praha”
+    npm start -- "praha"
