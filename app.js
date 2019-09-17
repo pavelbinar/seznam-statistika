@@ -22,7 +22,7 @@ const getData = function (keyword) {
 
       const termQueryDataString = scriptTagContent.match(regex)[0]
 
-      const termQueryDataObject = eval(`(function(){${termQueryDataString} return termQueryData;})()`)
+      const termQueryDataObject = eval(`(function(){${termQueryDataString} return termQueryData;})()`) // eslint-disable-line
 
       displayData(termQueryDataObject)
     } else {
