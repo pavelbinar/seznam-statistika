@@ -13,7 +13,7 @@
     "cheerio": "^1.0.0-rc.2",
     "lodash": "^4.17.15",
     "request": "^2.88.0",
-    "standard": "^14.3.0"
+    "standard": "^14.3.1"
   },
   "devDependencies": {},
   "scripts": {
